@@ -1,3 +1,4 @@
+/* === Reset & Base Styles === */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,12 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f9ff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f6f9fe;
   color: #333;
 }
 
-/* Navbar */
+/* === Navbar === */
 header {
   display: flex;
   justify-content: space-between;
@@ -46,7 +47,7 @@ nav a.active {
   gap: 0.3rem;
 }
 
-/* Banner Section */
+/* === Banner Section === */
 .banner {
   display: flex;
   justify-content: space-between;
@@ -84,13 +85,12 @@ nav a.active {
   height: auto;
 }
 
-/* Plants Section */
+/* === Plants Section === */
 .plants {
   padding: 3rem 2rem;
   background-color: #fff;
   text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
 }
 
 .section-header h2 {
@@ -121,7 +121,7 @@ nav a.active {
   background-color: #f9f9f9;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,8 +160,164 @@ nav a.active {
   background-color: #e65a00;
 }
 
+/* === Plants Lover Section === */
+.plants-lover-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
 
-/* Responsive Design */
+.plants-image-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+}
+
+.main-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.badge-img {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: auto;
+  z-index: 10;
+}
+
+.plants-content {
+  flex: 1;
+  max-width: 500px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem;
+  color: #444;
+  text-align: left;
+}
+
+.plants-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.plants-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.plants-content li {
+  font-size: 16px;
+  color: #6c6c6c;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* === Deals Section === */
+.deals-section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.deals-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.deals-title span {
+  color: #f15a24;
+  font-weight: bold;
+}
+
+.deals-subtitle {
+  font-size: 14px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.deals-grid {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.deal-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.deal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.deal-card.small {
+  height: 160px;
+}
+
+.deal-card.large {
+  flex: 2;
+  min-width: 280px;
+  height: calc(160px * 2 + 20px);
+}
+
+.deal-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.deal-text p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.deal-text a {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+/* === Responsive Design === */
 @media (max-width: 768px) {
   nav a:not(.cart) {
     display: none;
@@ -194,5 +350,33 @@ nav a.active {
 
   .plants {
     padding: 2rem 1rem;
+  }
+
+  .deals-grid {
+    flex-direction: column;
+  }
+
+  .left-column {
+    flex-direction: column;
+  }
+
+  .deal-card.small,
+  .deal-card.large {
+    width: 100%;
+    height: 250px;
+  }
+
+  .plants-lover-section {
+    flex-direction: column;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .plants-content {
+    padding: 1rem 0;
+  }
+
+  .badge-img {
+    display: none;
   }
 }
